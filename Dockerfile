@@ -15,8 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy Backend code
 COPY Backend /app/Backend
 
-# Hugging Face Spaces exposes port 7860
-EXPOSE 7860
+EXPOSE 8000
 
-CMD ["sh", "-c", "ollama serve & sleep 2 && (ollama pull phi3 &) && uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-7860}"]
+CMD ["sh", "-c", "ollama serve & uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"]
+
 
