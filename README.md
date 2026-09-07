@@ -63,13 +63,9 @@ Powered by local LLMs via **Ollama** (`phi3`) and **FAISS** vector embeddings, S
 
 ---
 
-### 🎬 Demo Video
-
-Watch the complete walkthrough video in action:
-
-- **Direct File**: 🎥 [Docs/Demo.mkv](Docs/Demo.mkv)
-
-<video src="Docs/Demo.mkv" controls width="100%"></video>
+<video src="Docs/New%20Demo.mp4" controls width="100%" preload="metadata">
+  Your browser does not support HTML5 video. You can <a href="Docs/New%20Demo.mp4">download the video file</a> instead.
+</video>
 
 ---
 
@@ -198,4 +194,3 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 <div align="center">
   <sub>Built with ❤️ for privacy, transparency, and consumer protection.</sub>
 </div>
-"# SkimTerms.ai" 
