@@ -18,4 +18,5 @@ COPY Backend /app/Backend
 EXPOSE 8000
 
 # Start Ollama service in background, download model, and start FastAPI
-CMD sh -c "ollama serve & sleep 5 && ollama pull phi3 && uvicorn Backend.app:app --host 0.0.0.0 --port 8000"
+CMD sh -c "ollama serve & sleep 5 && ollama pull phi3 && uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"
+
