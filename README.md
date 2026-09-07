@@ -17,7 +17,11 @@
 
 ---
 
-</div>
+🌐 **Live Demo API**: [`https://skimterms-ai.onrender.com`](https://skimterms-ai.onrender.com)
+
+> 💡 **Cloud Hosting Note**: On free-tier cloud servers (like Render), memory is capped at 512MB RAM, so local GPU/CPU model weights (`phi3`) cannot be hosted online. When accessed via the live cloud URL, the backend operates in **Lightweight RAG Mode** (extracting exact semantic document clauses). For full LLM generation streaming, run locally with `ollama run phi3` or set a free `GROQ_API_KEY` on Render!
+
+---
 
 ## 📌 Table of Contents
 
