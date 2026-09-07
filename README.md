@@ -68,7 +68,7 @@ Powered by local LLMs via **Ollama** (`phi3`) and **FAISS** vector embeddings, S
 
 > 💡 **For native inline video player rendering on GitHub web interface:**
 > Drag and drop `Docs/New Demo.mp4` directly into the README editor on GitHub to generate a native `https://github.com/user-attachments/assets/...` video player link.
-
+https://github.com/KrishanthG/SkimTerms.ai/blob/main/Docs/New%20Demo.mp4
 Alternatively, view or download the demo file directly:
 🎥 **[Watch / Download Demo Video (Docs/New Demo.mp4)](Docs/New%20Demo.mp4)**
 
