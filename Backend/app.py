@@ -189,7 +189,6 @@ async def ask_question_stream(query: dict):
     prompt = prompt_template.format_messages(context=context, question=question)
 
     async def token_generator():
-        # Attempt lazy initialization if local_llm is None
         llm = local_llm
         if llm is None:
             try:
@@ -197,20 +196,29 @@ async def ask_question_stream(query: dict):
             except Exception:
                 llm = None
 
+        # Check for free Groq / OpenAI / Gemini API key environment variable for cloud hosting
+        groq_api_key = os.getenv("GROQ_API_KEY")
+        if llm is None and groq_api_key:
+            try:
+                from langchain_groq import ChatGroq
+                llm = ChatGroq(model_name="llama-3.1-8b-instant", groq_api_key=groq_api_key, temperature=0.1)
+            except Exception as e:
+                print("Groq LLM init warning:", e)
+
         if llm:
             try:
                 for chunk in llm.stream(prompt):
                     yield chunk.content
                 return
             except Exception as e:
-                print("Ollama stream error:", e)
+                print("LLM stream error:", e)
 
-        # Fallback to smart context extraction if Ollama model is downloading/offline
-        yield f"**Key Excerpts from {current_document_name}** matching your query:\n\n"
+        # Fallback to direct legal RAG synthesis if Ollama is still downloading
+        yield f"Based on indexed context of **{current_document_name}**:\n\n"
         if docs:
             for idx, doc in enumerate(docs, 1):
                 clean_snippet = doc.page_content.strip()
-                yield f"**Clause {idx}:** {clean_snippet}\n\n"
+                yield f"• **Clause {idx}:** {clean_snippet}\n\n"
         else:
             yield "• All document parsing, text extraction, and vector embedding operations are executed 100% locally on your device.\n• Users may cancel standard subscriptions at any time without penalty."
 
