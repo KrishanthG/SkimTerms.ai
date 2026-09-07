@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkimTerms.ai — Legal Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#005BFF',
+            'brand-dark': '#004CD6'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-[#121417] text-gray-900 dark:text-gray-100 font-['Inter'] antialiased min-h-screen flex flex-col justify-between selection:bg-[#005BFF] selection:text-white transition-colors">
+
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#121417]/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <img src="assets/logo.png" alt="SkimTerms Logo" class="w-8 h-8 object-contain rounded-lg">
+        <span class="text-lg font-black tracking-tight text-gray-900 dark:text-white">SkimTerms<span class="text-[#005BFF]">.ai</span></span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle-btn" class="w-9 h-9 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white bg-gray-100 dark:bg-gray-800 transition-colors" title="Toggle Theme">
+          <span class="material-symbols-outlined text-[20px]">dark_mode</span>
+        </button>
+        <a href="upload.html" class="px-4 py-2 rounded-full bg-[#005BFF] hover:bg-[#004CD6] text-white text-xs font-bold shadow-sm transition-all hover:shadow-md">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-1 flex flex-col items-center justify-center pt-28 pb-16 px-6">
+    <div class="max-w-3xl text-center flex flex-col items-center gap-6">
+      
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight leading-tight">
+        Understand Legal Contracts &amp; Privacy Policies in <span class="text-[#005BFF]">Seconds</span>.
+      </h1>
+
+      <p class="text-sm md:text-base text-gray-500 dark:text-gray-400 max-w-xl leading-relaxed">
+        Upload any document or paste policy text for instant, plain-English legal simplification powered by offline AI.
+      </p>
+
+      <!-- Action Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xl mt-4">
+        
+        <!-- Card 1: Upload & Analyze -->
+        <a href="upload.html" class="group bg-white dark:bg-[#1f2329] border border-gray-200 dark:border-gray-800 hover:border-[#005BFF] p-6 rounded-2xl shadow-xs hover:shadow-md transition-all flex flex-col items-start gap-3 text-left">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-gray-800 flex items-center justify-center text-[#005BFF]">
+            <span class="material-symbols-outlined text-[24px]">upload_file</span>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-[#005BFF] transition-colors">Upload Document</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Upload PDF or paste Terms of Service text.</p>
+          </div>
+          <span class="text-xs font-bold text-[#005BFF] flex items-center gap-1 mt-1 group-hover:translate-x-1 transition-transform">
+            Upload Now <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </a>
+
+        <!-- Card 2: Interactive AI Dashboard -->
+        <a href="dashboard.html" class="group bg-white dark:bg-[#1f2329] border border-gray-200 dark:border-gray-800 hover:border-[#005BFF] p-6 rounded-2xl shadow-xs hover:shadow-md transition-all flex flex-col items-start gap-3 text-left">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-gray-800 flex items-center justify-center text-[#005BFF]">
+            <span class="material-symbols-outlined text-[24px]">chat</span>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-[#005BFF] transition-colors">AI Chat Dashboard</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Ask questions &amp; inspect legal clauses.</p>
+          </div>
+          <span class="text-xs font-bold text-[#005BFF] flex items-center gap-1 mt-1 group-hover:translate-x-1 transition-transform">
+            Open Dashboard <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-gray-100 dark:border-gray-800 py-6 bg-white dark:bg-[#121417]">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="Logo" class="w-5 h-5 object-contain">
+        <span class="font-bold text-gray-700 dark:text-gray-300">SkimTerms.ai</span>
+        <span>— Offline Legal Simplification</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 text-xs">
+        <span class="text-gray-500 dark:text-gray-400">Developed by <strong class="text-gray-700 dark:text-gray-200">Krishanth G</strong> (<a href="https://www.linkedin.com/in/krishanth-g" target="_blank" rel="noopener noreferrer" class="text-[#005BFF] hover:underline font-medium">LinkedIn: krishanth-g</a>)</span>
+        <span>&copy; 2025 SkimTerms.ai. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Toggle Listener
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    themeToggleBtn?.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

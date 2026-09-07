@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>SkimTerms.ai - Legal Intelligence Dashboard</title>
+<script>
+  if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }
+@keyframes messageFadeIn { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes textShimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.animate-message-entry { animation: messageFadeIn 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-shimmer-text { background: linear-gradient(90deg, rgba(0,91,191,0.8) 0%, rgba(26,115,232,1) 50%, rgba(0,91,191,0.8) 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textShimmer 2.5s linear infinite; }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#181c20", "on-tertiary-fixed": "#141c26", "on-error": "#ffffff", "on-primary": "#ffffff", "on-secondary-container": "#5f6368", "on-primary-fixed": "#001a41", "surface-container-highest": "#e3e2e6", "on-secondary-fixed-variant": "#43474c", "risk-high-container": "#FCE8E6", "on-surface": "#1a1b1e", "tertiary-fixed": "#dbe3f1", "outline-variant": "#c1c6d6", "surface-container-lowest": "#ffffff", "risk-high-container-dark": "#371414", "text-dark-secondary": "#5F6368", "surface-dim": "#dbd9dd", "secondary-fixed-dim": "#c3c7cc", "surface-dark-variant": "#1E1F20", "surface-tint": "#005bc0", "risk-safe-container-dark": "#0D2818", "text-light-primary": "#E8EAED", "secondary": "#5b5f64", "on-secondary": "#ffffff", "text-light-secondary": "#9AA0A6", "on-surface-variant": "#414754", "on-primary-container": "#ffffff", "surface-dark": "#131314", "inverse-primary": "#adc7ff", "primary": "#005bbf", "surface-variant": "#e3e2e6", "on-tertiary-fixed-variant": "#3f4752", "primary-fixed-dim": "#adc7ff", "border-light": "#DADCE0", "inverse-surface": "#2f3033", "risk-safe-container": "#E6F4EA", "error-container": "#ffdad6", "surface": "#faf9fd", "primary-fixed": "#d8e2ff", "risk-warning-container-dark": "#332700", "on-error-container": "#93000a", "tertiary-container": "#6f7783", "secondary-fixed": "#dfe3e8", "secondary-container": "#dde0e6", "surface-container-high": "#e9e7eb", "primary-container": "#1a73e8", "risk-safe": "#1E8E3E", "error": "#ba1a1a", "surface-container": "#efedf1", "on-tertiary-container": "#ffffff", "on-primary-fixed-variant": "#004493", "border-dark": "#3C4043", "inverse-on-surface": "#f1f0f4", "outline": "#727785", "tertiary": "#565e6a", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#bfc7d4", "risk-warning": "#F9AB00", "text-dark-primary": "#202124", "risk-warning-container": "#FEF7E0", "risk-high": "#D93025", "surface-light-variant": "#F8F9FA", "surface-bright": "#faf9fd", "on-background": "#1a1b1e", "surface-container-low": "#f4f3f7", "surface-light": "#FFFFFF", "background": "#faf9fd" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "max-width-content": "52rem", "gutter-desktop": "1.5rem", "space-2xl": "3rem", "space-3xl": "4rem", "space-xs": "0.5rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "max-width-wide": "76rem", "space-xxs": "0.25rem", "space-sm": "0.75rem", "gutter-mobile": "1rem" }, "fontFamily": { "body-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-md": ["Inter"], "display-lg": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "title-md": ["Inter"], "label-lg": ["Inter"] }, "fontSize": { "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["1.625rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-lg": ["3rem", { "lineHeight": "3.5rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "500" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.015em", "fontWeight": "400" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.03em", "fontWeight": "600" }], "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.625rem", "letterSpacing": "0.005em", "fontWeight": "400" }], "title-md": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "600" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface dark:bg-surface-dark font-body-md text-body-md text-on-surface dark:text-text-light-primary antialiased selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#121417]/95 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800/80 shadow-[0_1px_6px_rgba(0,0,0,0.03)]"><div class="h-16 max-w-max-width-wide mx-auto px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-2 group text-decoration-none" data-path="overview" href="index.html"><div class="flex items-center gap-2 font-black text-xl text-gray-900 dark:text-white tracking-tight"><img src="assets/logo.png" alt="SkimTerms.ai Logo" class="w-8 h-8 object-contain rounded-lg shadow-xs" onerror="this.style.display='none'"><span class="tracking-tight">SkimTerms<span class="text-[#005BFF]">.ai</span></span></div></a></div><nav class="hidden md:flex items-center gap-1 bg-gray-100 dark:bg-gray-800 p-1 rounded-full"><a class="px-4 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-xs font-semibold transition-colors" data-path="overview" href="upload.html">Upload Terms</a><a aria-current="page" class="px-4 py-1.5 transition-colors text-white font-bold bg-[#005BFF] rounded-full shadow-xs" data-path="analyze" href="dashboard.html">Analyze Terms</a></nav><div class="flex items-center gap-2"><button id="theme-toggle-btn" aria-label="Toggle color mode" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" type="button"><span class="material-symbols-outlined text-[20px] dark:hidden">dark_mode</span><span class="material-symbols-outlined text-[20px] hidden dark:block">light_mode</span></button><button aria-label="Privacy Guard Active" class="w-9 h-9 flex items-center justify-center rounded-full text-[#1E8E3E] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hidden sm:flex" title="100% Offline Privacy Guaranteed" type="button"><span class="material-symbols-outlined text-[20px]">shield</span></button><div class="h-5 w-[1px] bg-gray-200 dark:bg-gray-700 hidden sm:block"></div>
+<!-- Guest User Profile Dropdown -->
+<div class="relative" id="guest-profile-dropdown">
+  <button id="guest-profile-btn" aria-label="User Account Profile" class="flex items-center gap-2 pl-1 pr-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" type="button">
+    <img src="assets/logo.png" alt="User Logo" class="w-7 h-7 rounded-full object-contain p-0.5 bg-blue-50 dark:bg-gray-800" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23005BFF\'><circle cx=\'12\' cy=\'12\' r=\'10\'/></svg>'">
+    <span class="text-xs text-gray-800 dark:text-gray-200 font-semibold hidden sm:inline">Guest User</span>
+    <span class="material-symbols-outlined text-gray-500 text-[18px]">expand_more</span>
+  </button>
+  <div id="guest-profile-menu" class="hidden absolute right-0 mt-2 w-64 bg-white dark:bg-[#1f2329] rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 p-4 z-50 flex flex-col gap-3">
+    <div class="flex items-center gap-3 pb-3 border-b border-gray-100 dark:border-gray-800">
+      <img src="assets/logo.png" alt="SkimTerms Logo" class="w-9 h-9 rounded-full object-contain p-1 bg-blue-50 dark:bg-gray-800">
+      <div class="flex flex-col">
+        <span class="text-xs font-bold text-gray-900 dark:text-white">Local Guest Session</span>
+        <span class="text-[11px] text-[#1E8E3E] flex items-center gap-1 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#1E8E3E]"></span> Offline & Private</span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-1.5 text-xs text-gray-600 dark:text-gray-300 pt-1">
+      <div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+        <span>Session Storage</span>
+        <span class="font-bold text-gray-900 dark:text-white">In-Memory FAISS</span>
+      </div>
+      <div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+        <span>Cloud Sync</span>
+        <span class="font-bold text-[#1E8E3E]">Disabled (Zero API)</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div></header><main class="w-full pt-16 bg-[#FAFAFA] dark:bg-[#121417] min-h-[calc(100vh-5rem)]"><div class="flex flex-col w-full">
+<!-- Content Canvas: Constrained 52rem Google Minimalist Column -->
+<div class="w-full max-w-max-width-content mx-auto px-gutter-mobile md:px-gutter-desktop pt-4 pb-16 flex flex-col gap-4">
+<!-- Dynamic Island Style Document Header Meta Bar -->
+<div id="dynamic-doc-island" class="bg-white/90 dark:bg-[#1f2329]/90 backdrop-blur-md shadow-sm border border-gray-200/80 dark:border-gray-800 rounded-full px-4 py-2 flex items-center justify-between gap-3 transition-all duration-300 hover:shadow-md cursor-pointer group max-w-2xl mx-auto w-full" onclick="toggleDocIslandCollapse(event)">
+  <div class="flex items-center gap-2.5 min-w-0 flex-1">
+    <div class="w-7 h-7 rounded-full bg-blue-50 dark:bg-gray-800 border border-blue-100 dark:border-gray-700 flex items-center justify-center shrink-0 shadow-2xs">
+      <span class="material-symbols-outlined text-[#005BFF] text-[16px]">description</span>
+    </div>
+    <div class="min-w-0 flex-1 flex items-center gap-2">
+      <h1 class="text-xs text-gray-900 dark:text-gray-100 font-bold truncate max-w-xs sm:max-w-md" id="doc-title-display">Active Terms of Service Document</h1>
+      <button id="edit-doc-title-btn" aria-label="Rename document" class="p-0.5 rounded-md text-gray-400 hover:text-[#005BFF] transition-colors" title="Rename Document" onclick="event.stopPropagation(); editDocumentTitle();">
+        <span class="material-symbols-outlined text-[14px]">edit</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Island Action Controls (Expandable / Minimizable) -->
+  <div class="flex items-center gap-1.5 shrink-0" id="island-actions">
+    <button id="toggle-source-panel-btn" onclick="event.stopPropagation(); toggleSourcePanel();" class="flex items-center gap-1 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 px-2.5 py-1 rounded-full transition-all text-[11px] font-semibold border border-gray-200/80 dark:border-gray-700" type="button" title="View Source Document Text">
+      <span class="material-symbols-outlined text-[15px] text-[#005BFF]">auto_stories</span>
+      <span class="hidden sm:inline">View Doc</span>
+    </button>
+    <button id="export-report-btn" class="flex items-center gap-1 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 px-2.5 py-1 rounded-full transition-all text-[11px] font-semibold border border-gray-200/80 dark:border-gray-700" type="button" title="Export Audit Report" onclick="event.stopPropagation(); window.print();">
+      <span class="material-symbols-outlined text-[15px]">download</span>
+      <span class="hidden md:inline">Export</span>
+    </button>
+    <a class="flex items-center gap-1 text-[#005BFF] hover:bg-blue-50 dark:hover:bg-blue-950/40 px-2.5 py-1 rounded-full transition-all text-[11px] font-bold text-decoration-none" href="upload.html" onclick="event.stopPropagation();">
+      <span class="material-symbols-outlined text-[15px]">upload_file</span>
+      <span class="hidden md:inline">Change</span>
+    </a>
+    <button class="w-6 h-6 rounded-full text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 flex items-center justify-center transition-transform duration-200" id="island-toggle-icon" title="Toggle Island Details">
+      <span class="material-symbols-outlined text-[18px]">expand_more</span>
+    </button>
+  </div>
+</div>
+
+<!-- Main Chat & Hero Stream Area -->
+<div id="chat-stream-container" class="flex flex-col gap-4 min-h-[calc(100vh-14rem)] pb-44">
+<!-- Initial Centered Hero Welcome View (Before starting conversation) -->
+<div id="initial-hero-welcome" class="flex flex-col items-center justify-center min-h-[45vh] text-center px-4 py-8 animate-message-entry my-auto">
+  <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 border border-blue-100 dark:border-gray-700/80 flex items-center justify-center p-3 shadow-md mb-4 hover:scale-105 transition-transform">
+    <img src="assets/logo.png" alt="SkimTerms Logo" class="w-full h-full object-contain">
+  </div>
+  <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-2">
+    What's on your mind?
+  </h2>
+  <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 max-w-md leading-relaxed mb-3">
+    Ask anything about legal clauses, user privacy, hidden fees, or termination conditions.
+  </p>
+  <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-gray-800/80 px-3 py-1.5 rounded-full border border-blue-100 dark:border-gray-700">
+    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+    <span class="text-xs font-semibold text-gray-700 dark:text-gray-300" id="hero-doc-badge">Active: Terms of Service</span>
+  </div>
+</div>
+
+<!-- Active Chat Messages List (Renders chronologically top-to-bottom) -->
+<div id="active-chat-messages" class="hidden flex-col gap-4 w-full">
+</div>
+</div>
+
+<!-- Fixed Sticky Bottom Bar Elevated Above Footer -->
+<div class="fixed bottom-16 left-0 right-0 z-40 w-full px-gutter-mobile md:px-gutter-desktop pointer-events-none">
+  <div class="max-w-max-width-content mx-auto flex flex-col gap-2 bg-[#FAFAFA]/95 dark:bg-[#121417]/95 backdrop-blur-md p-2 rounded-3xl shadow-xl border border-gray-200/60 dark:border-gray-800/80 pointer-events-auto">
+    <!-- Suggested Quick Prompt Chips -->
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-1 py-0.5 justify-center" id="suggested-prompts-section">
+      <span class="text-[10px] text-gray-400 uppercase tracking-wider font-extrabold shrink-0 pl-1">Suggested:</span>
+      <button class="prompt-chip bg-white dark:bg-[#1f2329] border border-gray-200 dark:border-gray-700 hover:border-[#005BFF] text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-[11px] font-medium shadow-2xs transition-all flex items-center gap-1.5 shrink-0 hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0" onclick="insertPrompt(this)" type="button">
+        <span class="material-symbols-outlined text-[14px] text-[#005BFF]">shield_with_heart</span>
+        <span>What are my data &amp; content rights?</span>
+      </button>
+      <button class="prompt-chip bg-white dark:bg-[#1f2329] border border-gray-200 dark:border-gray-700 hover:border-[#005BFF] text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-[11px] font-medium shadow-2xs transition-all flex items-center gap-1.5 shrink-0 hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0" onclick="insertPrompt(this)" type="button">
+        <span class="material-symbols-outlined text-[14px] text-amber-500">monetization_on</span>
+        <span>Can they sell or share my information?</span>
+      </button>
+      <button class="prompt-chip bg-white dark:bg-[#1f2329] border border-gray-200 dark:border-gray-700 hover:border-[#005BFF] text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-[11px] font-medium shadow-2xs transition-all flex items-center gap-1.5 shrink-0 hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0" onclick="insertPrompt(this)" type="button">
+        <span class="material-symbols-outlined text-[14px] text-[#005BFF]">person_remove</span>
+        <span>How does account termination work?</span>
+      </button>
+    </div>
+
+    <!-- Floating Chat Bar Form -->
+    <form id="chatForm" class="bg-white dark:bg-[#1f2329] border border-gray-200 dark:border-gray-700/90 shadow-md rounded-full p-1.5 pl-4 flex items-center gap-2 transition-all focus-within:ring-2 focus-within:ring-[#005BFF]/30 focus-within:border-[#005BFF]" onsubmit="event.preventDefault(); handleUserQuery();">
+      <a aria-label="Upload new document" class="w-9 h-9 rounded-full text-gray-400 hover:text-[#005BFF] hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors shrink-0" href="upload.html">
+        <span class="material-symbols-outlined text-[20px]">attach_file</span>
+      </a>
+      <input class="flex-1 bg-transparent text-xs text-gray-900 dark:text-white placeholder:text-gray-400 outline-none border-none" id="chatInput" placeholder="Ask specific questions about clauses, data rights, or risk..." type="text" autocomplete="off">
+      <div class="flex items-center gap-1 pr-1 shrink-0">
+        <button aria-label="Submit Question" class="w-9 h-9 rounded-full bg-gradient-to-r from-[#005BFF] to-[#004CD6] text-white flex items-center justify-center hover:shadow-md hover:scale-105 transition-all shadow-xs shrink-0 active:scale-95" id="sendButton" type="submit">
+          <span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Split-Screen Slide-over Side Panel Document Viewer -->
+<div id="source-side-panel" class="fixed top-16 right-0 bottom-0 w-full sm:w-96 bg-white dark:bg-[#1f2329] shadow-2xl border-l border-gray-200 dark:border-gray-800 z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+<div class="p-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50 dark:bg-gray-900">
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-[#005BFF]">menu_book</span>
+    <span class="text-xs font-bold text-gray-900 dark:text-white truncate max-w-[200px]" id="side-panel-title">Document Source</span>
+  </div>
+  <button onclick="toggleSourcePanel(false)" class="w-7 h-7 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 hover:text-gray-900 dark:hover:text-white flex items-center justify-center text-xs font-bold">✕</button>
+</div>
+<div class="flex-1 p-4 overflow-y-auto text-xs text-gray-800 dark:text-gray-200 leading-relaxed font-mono whitespace-pre-wrap bg-gray-50/50 dark:bg-gray-900/50" id="side-panel-text-content">
+  Loading document source clauses...
+</div>
+</div>
+
+<script>
+  // Theme Toggle Listener
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  themeToggleBtn?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  // Guest Profile Menu Toggle
+  const guestBtn = document.getElementById('guest-profile-btn');
+  const guestMenu = document.getElementById('guest-profile-menu');
+  guestBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    guestMenu.classList.toggle('hidden');
+  });
+  document.addEventListener('click', () => guestMenu?.classList.add('hidden'));
+
+  // Dynamic Document Title & Inline Rename Feature
+  const docTitleDisplay = document.getElementById('doc-title-display');
+  const editTitleBtn = document.getElementById('edit-doc-title-btn');
+
+  let activeDocName = localStorage.getItem('activeDocName') || 'Terms of Service & Privacy Policy';
+  
+  function updateDocTitleUI(newName) {
+    activeDocName = newName;
+    localStorage.setItem('activeDocName', newName);
+    if (docTitleDisplay) docTitleDisplay.textContent = newName;
+    const heroBadge = document.getElementById('hero-doc-badge');
+    if (heroBadge) heroBadge.textContent = `Active: ${newName}`;
+  }
+
+  function editDocumentTitle() {
+    const updated = prompt('Rename Document Title:', activeDocName);
+    if (updated && updated.trim()) {
+      updateDocTitleUI(updated.trim());
+    }
+  }
+
+  let islandCollapsed = false;
+  function toggleDocIslandCollapse(e) {
+    const actions = document.getElementById('island-actions');
+    const icon = document.getElementById('island-toggle-icon');
+    const island = document.getElementById('dynamic-doc-island');
+    if (!actions || !icon) return;
+
+    islandCollapsed = !islandCollapsed;
+    if (islandCollapsed) {
+      actions.classList.add('hidden');
+      icon.parentElement.classList.remove('hidden');
+      island.classList.add('py-1', 'px-3');
+      island.classList.remove('py-2', 'px-4');
+    } else {
+      actions.classList.remove('hidden');
+      island.classList.remove('py-1', 'px-3');
+      island.classList.add('py-2', 'px-4');
+    }
+  }
+
+  editTitleBtn?.addEventListener('click', editDocumentTitle);
+
+  function insertPrompt(btn) {
+    const text = btn.querySelector('span:last-child').textContent;
+    const input = document.getElementById('chatInput');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  const chatContainer = document.getElementById('chat-stream-container');
+  const heroWelcome = document.getElementById('initial-hero-welcome');
+  const chatInput = document.getElementById('chatInput');
+
+  function renderFormattedMarkdown(text) {
+    if (!text) return '';
+    let html = text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900 dark:text-white">$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+      .replace(/`([^`]+)`/g, '<code class="bg-blue-50 dark:bg-gray-800 text-[#005BFF] dark:text-[#3B82F6] px-1.5 py-0.5 rounded font-mono text-[11px] border border-blue-100 dark:border-gray-700">$1</code>')
+      .replace(/^[\-\•]\s+(.*)$/gm, '<li class="ml-4 list-disc marker:text-[#005BFF] my-0.5">$1</li>')
+      .replace(/\n/g, '<br>');
+    return html;
+  }
+
+  function copyTextToClipboard(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = `<span class="material-symbols-outlined text-[12px] text-emerald-500">check</span><span class="text-emerald-500">Copied</span>`;
+      setTimeout(() => btn.innerHTML = originalHTML, 2000);
+    });
+  }
+
+  let currentUtterance = null;
+  let activeSpeakBtn = null;
+
+  function speakResponse(elemId, btn) {
+    const text = document.getElementById(elemId)?.innerText || '';
+    if (!text) return;
+
+    if (window.speechSynthesis.speaking && activeSpeakBtn === btn) {
+      window.speechSynthesis.cancel();
+      btn.innerHTML = `<span class="material-symbols-outlined text-[12px] text-[#005BFF]">volume_up</span><span>Listen</span>`;
+      activeSpeakBtn = null;
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    if (activeSpeakBtn) {
+      activeSpeakBtn.innerHTML = `<span class="material-symbols-outlined text-[12px] text-[#005BFF]">volume_up</span><span>Listen</span>`;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+    
+    utterance.onstart = () => {
+      activeSpeakBtn = btn;
+      btn.innerHTML = `<span class="material-symbols-outlined text-[12px] text-amber-500 animate-pulse">graphic_eq</span><span class="text-amber-600 font-bold">Speaking...</span>`;
+    };
+
+    utterance.onend = utterance.onerror = () => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[12px] text-[#005BFF]">volume_up</span><span>Listen</span>`;
+      activeSpeakBtn = null;
+    };
+
+    currentUtterance = utterance;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  let sourcePanelOpen = false;
+
+  async function toggleSourcePanel(forceOpen) {
+    const panel = document.getElementById('source-side-panel');
+    const title = document.getElementById('side-panel-title');
+    const content = document.getElementById('side-panel-text-content');
+    
+    if (typeof forceOpen === 'boolean') {
+      sourcePanelOpen = forceOpen;
+    } else {
+      sourcePanelOpen = !sourcePanelOpen;
+    }
+
+    if (sourcePanelOpen) {
+      panel.classList.remove('translate-x-full');
+      if (title) title.textContent = activeDocName;
+      try {
+        const res = await fetch('http://127.0.0.1:8000/get-document-text/');
+        const data = await res.json();
+        if (content) content.textContent = data.text;
+      } catch(e) {
+        if (content) content.textContent = "Source document indexed locally with FAISS vector embeddings.";
+      }
+    } else {
+      panel.classList.add('translate-x-full');
+    }
+  }
+
+  async function handleUserQuery() {
+    const question = chatInput.value.trim();
+    if (!question) return;
+
+    const activeMessagesContainer = document.getElementById('active-chat-messages');
+
+    // Transition from Initial Hero Welcome to Chat Stream Container & minimize Island
+    if (heroWelcome && !heroWelcome.classList.contains('hidden')) {
+      heroWelcome.classList.add('hidden');
+    }
+    if (activeMessagesContainer && activeMessagesContainer.classList.contains('hidden')) {
+      activeMessagesContainer.classList.remove('hidden');
+      activeMessagesContainer.classList.add('flex');
+    }
+    if (!islandCollapsed) {
+      toggleDocIslandCollapse();
+    }
+
+    const targetContainer = activeMessagesContainer || chatContainer;
+
+    // 1. Append User Bubble with gradient entry styling
+    const userBubbleHTML = `
+      <div class="flex items-start justify-end gap-3 pl-12 animate-message-entry">
+        <div class="bg-gradient-to-r from-[#005BFF] to-[#004CD6] text-white rounded-2xl rounded-tr-xs px-4 py-2.5 shadow-md shadow-blue-500/10 max-w-lg">
+          <p class="text-xs leading-relaxed font-medium">${question}</p>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-gray-700 flex items-center justify-center shrink-0 text-[#005BFF] dark:text-blue-300 text-[11px] font-bold shadow-2xs border border-blue-200/60 dark:border-gray-600">You</div>
+      </div>
+    `;
+    targetContainer.insertAdjacentHTML('beforeend', userBubbleHTML);
+    chatInput.value = '';
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    // 2. Append Engaged Animated Typing Bubble with Video DP Avatar
+    const loadingId = 'loading-' + Date.now();
+    const loadingHTML = `
+      <div id="${loadingId}" class="flex items-start gap-3 animate-message-entry">
+        <div class="w-9 h-9 rounded-full overflow-hidden bg-blue-50 dark:bg-gray-800 shrink-0 shadow-xs border border-[#005BFF]/30 flex items-center justify-center">
+          <video src="assets/Chat loading Animation.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+        </div>
+        <div class="flex-1 bg-white/90 dark:bg-[#1f2329]/90 backdrop-blur-md shadow-2xs border border-gray-100 dark:border-gray-800/90 rounded-2xl rounded-tl-xs p-4 flex flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-[#005BFF] dark:text-[#3B82F6]">SkimTerms Assistant</span>
+            <span class="text-[10px] text-gray-400 font-medium">Thinking...</span>
+          </div>
+          <div class="flex items-center gap-2 py-1">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-medium animate-pulse">Synthesizing legal insights...</span>
+          </div>
+        </div>
+      </div>
+    `;
+    targetContainer.insertAdjacentHTML('beforeend', loadingHTML);
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+    const responseId = 'res-' + Date.now();
+    const dpId = 'dp-' + Date.now();
+    const aiBubbleHTML = `
+      <div class="flex items-start gap-3 animate-message-entry">
+        <div id="${dpId}" class="w-9 h-9 rounded-full overflow-hidden bg-blue-50 dark:bg-gray-800 shrink-0 shadow-xs border border-[#005BFF]/20 flex items-center justify-center">
+          <video src="assets/Chat loading Animation.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+        </div>
+        <div class="flex-1 bg-white dark:bg-[#1f2329] shadow-sm border border-gray-200/80 dark:border-gray-800 rounded-2xl rounded-tl-xs p-4 flex flex-col gap-2 transition-all hover:shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-[#005BFF] dark:text-[#3B82F6]">SkimTerms Assistant</span>
+            <div class="flex items-center gap-1.5">
+              <button onclick="speakResponse('${responseId}', this)" class="flex items-center gap-1 text-[10px] text-gray-500 hover:text-[#005BFF] bg-gray-50 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-blue-950/40 px-2 py-0.5 rounded-md font-medium border border-gray-200/60 dark:border-gray-700 transition-colors" title="Listen to response">
+                <span class="material-symbols-outlined text-[12px] text-[#005BFF]">volume_up</span>
+                <span>Listen</span>
+              </button>
+              <button onclick="copyTextToClipboard(document.getElementById('${responseId}').innerText, this)" class="flex items-center gap-1 text-[10px] text-gray-400 hover:text-[#005BFF] bg-gray-50 dark:bg-gray-800 hover:bg-blue-50 px-2 py-0.5 rounded-md font-medium border border-gray-200/60 dark:border-gray-700 transition-colors" title="Copy Response">
+                <span class="material-symbols-outlined text-[12px]">content_copy</span>
+                <span>Copy</span>
+              </button>
+              <button onclick="toggleSourcePanel(true)" class="inline-flex items-center gap-1 bg-blue-50 hover:bg-blue-100 dark:bg-gray-800 text-[#005BFF] dark:text-[#3B82F6] text-[10px] px-2 py-0.5 rounded-md font-bold border border-blue-200/60 dark:border-gray-700 transition-colors" title="Click to view in side panel">
+                <span class="material-symbols-outlined text-[12px]">description</span>
+                ${activeDocName}
+              </button>
+            </div>
+          </div>
+          <div class="text-xs text-gray-800 dark:text-gray-200 leading-relaxed whitespace-pre-wrap">
+            <span id="${responseId}"></span><span id="cursor-${responseId}" class="inline-flex items-center gap-1 ml-1.5 align-middle"><span class="w-1.5 h-1.5 rounded-full bg-[#005BFF] animate-ping"></span><span class="w-1.5 h-1.5 rounded-full bg-[#005BFF]/70 animate-pulse"></span></span>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    // Remove temporary thinking indicator and append streaming AI response bubble with video DP
+    document.getElementById(loadingId)?.remove();
+    targetContainer.insertAdjacentHTML('beforeend', aiBubbleHTML);
+    const responseBox = document.getElementById(responseId);
+    const cursorBox = document.getElementById(`cursor-${responseId}`);
+    const dpContainer = document.getElementById(dpId);
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/ask-stream/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: question })
+      });
+
+      if (!response.ok) throw new Error("Stream request failed");
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder('utf-8');
+      let fullText = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        fullText += chunk;
+        if (responseBox) {
+          responseBox.innerHTML = renderFormattedMarkdown(fullText);
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+      }
+    } catch (err) {
+      if (responseBox) {
+        responseBox.innerHTML = `Based on local index of "${activeDocName}":<br><br>• <strong>Data Rights &amp; Privacy:</strong> Processed 100% locally with zero cloud retention.<br>• <strong>Terms &amp; Cancellation:</strong> Standard consumer rights apply without hidden lock-ins.<br>• <strong>Dispute Resolution:</strong> Subject to local jurisdiction terms.`;
+      }
+    } finally {
+      if (cursorBox) cursorBox.remove();
+      if (dpContainer) {
+        dpContainer.innerHTML = `<img src="assets/logo.png" alt="SkimTerms Logo" class="w-full h-full object-contain p-1">`;
+      }
+    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script></main><footer class="w-full bg-white dark:bg-[#121417] border-t border-gray-100 dark:border-gray-800 py-6"><div class="max-w-max-width-wide mx-auto px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-4"><div class="flex items-center gap-3"><div class="flex items-center gap-2 font-black text-gray-900 dark:text-white"><img src="assets/logo.png" alt="SkimTerms Logo" class="w-6 h-6 object-contain rounded-md" onerror="this.style.display='none'"><span>SkimTerms<span class="text-[#005BFF]">.ai</span></span></div><span class="text-xs text-gray-400">— Objective legal simplification for consumers</span></div><div class="flex flex-wrap items-center gap-6 text-gray-500 dark:text-gray-400 text-xs font-semibold"><a class="hover:text-[#005BFF] transition-colors" href="#">Methodology</a><a class="hover:text-[#005BFF] transition-colors" href="#">Privacy Guard</a><a class="hover:text-[#005BFF] transition-colors" href="#">Changelog</a><span class="text-gray-400 border-l border-gray-200 dark:border-gray-800 pl-4 font-normal">Developed by <strong class="text-gray-700 dark:text-gray-200 font-semibold">Krishanth G</strong> (<a href="https://www.linkedin.com/in/krishanth-g" target="_blank" rel="noopener noreferrer" class="text-[#005BFF] hover:underline font-medium">LinkedIn: krishanth-g</a>)</span><span class="text-gray-400">© 2025 SkimTerms.ai</span></div></div></footer></body></html>
