@@ -555,6 +555,7 @@
       localStorage.setItem('activeDocName', activeDocName);
       if (rawTextContent) localStorage.setItem('activeDocText', rawTextContent);
       updateProgressUI(100, "Local offline client index ready! Opening dashboard...");
+      setTimeout(() => { window.location.href = 'dashboard.html'; }, 600);
     }
   });
 </script>
