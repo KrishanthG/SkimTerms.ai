@@ -2,11 +2,6 @@ fastapi
 uvicorn
 python-multipart
 pypdf
-langchain
+langchain-text-splitters
 langchain-community
-langchain-ollama  
-sentence-transformers
-faiss-cpu
-transformers
-torch
-accelerate
+langchain-ollama

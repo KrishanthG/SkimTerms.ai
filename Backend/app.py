@@ -8,10 +8,9 @@ from fastapi.responses import StreamingResponse
 from pypdf import PdfReader
 from pydantic import BaseModel
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
+
 
 app = FastAPI(title="SkimTerms.ai API", description="Offline-first, API-free RAG Legal Assistant with Ollama")
 
@@ -28,8 +27,18 @@ app.add_middleware(
 vector_store = None
 current_document_name = "Terms of Service & Privacy Policy"
 
-# Global embeddings model cached once to prevent reloading weights repeatedly
-embeddings_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+# Global embeddings model cached lazily
+embeddings_model = None
+
+def get_embeddings():
+    global embeddings_model
+    if embeddings_model is None:
+        try:
+            from langchain_community.embeddings import HuggingFaceEmbeddings
+            embeddings_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        except Exception:
+            embeddings_model = None
+    return embeddings_model
 
 # Default sample context to pre-initialize vector_store so queries work out-of-the-box
 DEFAULT_LEGAL_TEXT = """
@@ -46,16 +55,17 @@ except Exception as e:
     local_llm = None
 
 def init_default_vector_store():
-    global vector_store, embeddings_model
+    global vector_store
     try:
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-        chunks = text_splitter.split_text(DEFAULT_LEGAL_TEXT)
-        vector_store = FAISS.from_texts(chunks, embeddings_model)
+        emb = get_embeddings()
+        if emb:
+            from langchain_community.vectorstores import FAISS
+            text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+            chunks = text_splitter.split_text(DEFAULT_LEGAL_TEXT)
+            vector_store = FAISS.from_texts(chunks, emb)
     except Exception as e:
         print("Default vector store initialization warning:", e)
 
-# Pre-initialize vector store
-init_default_vector_store()
 
 class TextUploadPayload(BaseModel):
     text: str
