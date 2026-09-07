@@ -1,0 +1,21 @@
+FROM python:3.10-slim
+
+# Install curl & system dependencies
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Install Ollama
+RUN curl -fsSL https://ollama.com/install.sh | sh
+
+WORKDIR /app
+
+# Copy requirements & install python dependencies
+COPY Backend/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy Backend code
+COPY Backend /app/Backend
+
+EXPOSE 8000
+
+# Start Ollama service in background, download model, and start FastAPI
+CMD sh -c "ollama serve & sleep 5 && ollama pull phi3 && uvicorn Backend.app:app --host 0.0.0.0 --port 8000"
