@@ -15,11 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy Backend code
 COPY Backend /app/Backend
 
-# Run Ollama in background during build to pull phi3 model into image layer
-RUN ollama serve & sleep 5 && ollama pull phi3
-
 EXPOSE 8000
 
-# Start Ollama daemon and FastAPI application
-CMD sh -c "ollama serve & sleep 3 && uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"
+# Start Ollama & FastAPI immediately (model will download seamlessly on first request or background)
+CMD sh -c "ollama serve & sleep 2 && (ollama pull phi3 &) && uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"
 
