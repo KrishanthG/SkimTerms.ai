@@ -17,7 +17,8 @@ COPY Backend /app/Backend
 
 EXPOSE 8000
 
-CMD sh -c "ollama serve & uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"
+CMD sh -c "ollama serve & sleep 3 && (ollama pull phi3 &) && uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"
+
 
 
 
