@@ -15,8 +15,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy Backend code
 COPY Backend /app/Backend
 
-EXPOSE 8000
-
-# Start Ollama & FastAPI immediately (model will download seamlessly on first request or background)
-CMD sh -c "ollama serve & sleep 2 && (ollama pull phi3 &) && uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"
+# Start FastAPI app as main container process (Ollama can be served or managed)
+CMD ["sh", "-c", "ollama serve & uvicorn Backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"]
 
