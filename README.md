@@ -63,12 +63,18 @@ Powered by local LLMs via **Ollama** (`phi3`) and **FAISS** vector embeddings, S
 
 ### 🎬 Demo Video
 
-<video src="https://raw.githubusercontent.com/krishanthg/SkimTerms.ai/main/Docs/New%20Demo.mp4" controls="controls" muted="muted" style="max-width: 100%;">
+<video src="https://raw.githubusercontent.com/KrishanthG/SkimTerms.ai/main/Docs/New%20Demo.mp4" controls="controls" muted="muted" style="max-width: 100%;">
 </video>
 
-> 💡 **For native inline video player rendering on GitHub web interface:**
-> Drag and drop `Docs/New Demo.mp4` directly into the README editor on GitHub to generate a native `https://github.com/user-attachments/assets/...` video player link.
-https://github.com/KrishanthG/SkimTerms.ai/blob/main/Docs/New%20Demo.mp4
+
+
+https://github.com/user-attachments/assets/ea6dfc3b-ebbc-4eda-8ca0-fe0134521031
+
+
+
+
+
+
 Alternatively, view or download the demo file directly:
 🎥 **[Watch / Download Demo Video (Docs/New Demo.mp4)](Docs/New%20Demo.mp4)**
 
