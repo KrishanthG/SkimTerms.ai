@@ -61,13 +61,16 @@ Powered by local LLMs via **Ollama** (`phi3`) and **FAISS** vector embeddings, S
 | :---: | :---: | :---: |
 | ![Landing Page](Docs/Image%201.png) | ![Upload Interface](Docs/Image%202.png) | ![AI Dashboard](Docs/Image%203.png) |
 
----
+### 🎬 Demo Video
 
-<video src="Docs/New%20Demo.mp4" controls width="100%" preload="metadata">
-  Your browser does not support HTML5 video. You can <a href="Docs/New%20Demo.mp4">download the video file</a> instead.
+<video src="https://raw.githubusercontent.com/krishanthg/SkimTerms.ai/main/Docs/New%20Demo.mp4" controls="controls" muted="muted" style="max-width: 100%;">
 </video>
 
----
+> 💡 **For native inline video player rendering on GitHub web interface:**
+> Drag and drop `Docs/New Demo.mp4` directly into the README editor on GitHub to generate a native `https://github.com/user-attachments/assets/...` video player link.
+
+Alternatively, view or download the demo file directly:
+🎥 **[Watch / Download Demo Video (Docs/New Demo.mp4)](Docs/New%20Demo.mp4)**
 
 ## 🛠 Architecture & Tech Stack
 
@@ -187,7 +190,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 **Developed by Krishanth G**
 - 💼 **LinkedIn**: [krishanth-g](https://www.linkedin.com/in/krishanth-g)
-- 🌐 **Project Repository**: [SkimTerms.ai](https://github.com/krishanth-g/SkimTerms.ai)
+- 🌐 **Project Repository**: [SkimTerms.ai](https://github.com/krishanthg/SkimTerms.ai)
 
 ---
 
