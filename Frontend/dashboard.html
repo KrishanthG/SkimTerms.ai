@@ -297,11 +297,20 @@
       sourcePanelOpen = !sourcePanelOpen;
     }
 
+  async function toggleSourcePanel(forceOpen = null) {
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://127.0.0.1:8000' : 'https://skimterms-ai.onrender.com';
+    const panel = document.getElementById('source-side-panel');
+    const content = document.getElementById('source-panel-text');
+    const title = document.getElementById('source-panel-doc-title');
+    
+    if (forceOpen !== null) sourcePanelOpen = forceOpen;
+    else sourcePanelOpen = !sourcePanelOpen;
+
     if (sourcePanelOpen) {
       panel.classList.remove('translate-x-full');
       if (title) title.textContent = activeDocName;
       try {
-        const res = await fetch('http://127.0.0.1:8000/get-document-text/');
+        const res = await fetch(`${API_BASE}/get-document-text/`);
         const data = await res.json();
         if (content) content.textContent = data.text;
       } catch(e) {
@@ -310,6 +319,7 @@
     } else {
       panel.classList.add('translate-x-full');
     }
+  }
   }
 
   async function handleUserQuery() {
@@ -406,7 +416,8 @@
     const dpContainer = document.getElementById(dpId);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/ask-stream/', {
+      const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://127.0.0.1:8000' : 'https://skimterms-ai.onrender.com';
+      const response = await fetch(`${API_BASE}/ask-stream/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: question })

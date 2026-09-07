@@ -453,7 +453,8 @@
   const stepText = document.getElementById('analysis-step-text');
 
   analyzeBtn.addEventListener('click', async () => {
-    let endpoint = 'http://127.0.0.1:8000/upload/';
+    const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://127.0.0.1:8000' : 'https://skimterms-ai.onrender.com';
+    let endpoint = `${API_BASE}/upload/`;
     let options = {};
     let activeDocName = 'Terms of Service Document';
     let rawTextContent = '';
@@ -465,7 +466,7 @@
       formData.append('file', file);
       options = { method: 'POST', body: formData };
     } else if (rawLegalPaste.value.trim().length > 0) {
-      endpoint = 'http://127.0.0.1:8000/upload-text/';
+      endpoint = `${API_BASE}/upload-text/`;
       activeDocName = urlInput.value.trim() || renameDocInput.value.trim() || 'Pasted Terms of Service.txt';
       rawTextContent = rawLegalPaste.value.trim();
       options = {
@@ -474,7 +475,7 @@
         body: JSON.stringify({ text: rawTextContent, filename: activeDocName })
       };
     } else if (urlInput.value.trim().length > 0) {
-      endpoint = 'http://127.0.0.1:8000/upload-text/';
+      endpoint = `${API_BASE}/upload-text/`;
       activeDocName = urlInput.value.trim();
       rawTextContent = `TERMS OF SERVICE DOCUMENT: ${activeDocName}\n\n1. User Rights & Data Protection: This agreement governs your use of services and privacy protections.`;
       options = {
